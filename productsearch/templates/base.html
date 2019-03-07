@@ -7,31 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Eric Sei</title>
+    <title> Product Search </title>
 
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}">
 
   </head>
   <body>
+
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="">
+          <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'logo.png' %}" class="d-inline-block alighn-top">
             Product Search
           </a>
@@ -41,8 +28,11 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
               {% if user.is_authenticated %}
-              <!-- herf run following mini FORM  -->
-                   <a class="nav-item nav-link active" href="javascript:{document.getElementById('logout').submit()}">Log Out </a>
+                  <a class="nav-item nav-link active btn btn-warning" href="{% url 'create' %}">
+                    Create <span class="oi oi-plus"></span> 
+                  </a>
+                  <!-- herf run following mini FORM  -->
+                   <a class="nav-item nav-link active text-info" href="javascript:{document.getElementById('logout').submit()}">Log Out </a>
                    <form id="logout" method="POST" action="{% url 'logout' %}">
                      {% csrf_token %}
                      <input type="hidden">
@@ -59,29 +49,23 @@
     </nav>  
 </header>
 
-<div class="container">
-  {% block content %}
-  {% endblock %}
-</div>
-
-<footer class="text-muted">
   <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
+    {% block content %}
     
-    <p>
-        CopyRight @ Eric Sei: Product Search {%  now "Y" %}
-    </p>
+    {% endblock %}
+  </div>
+
+<footer class=" bg-dark text-center">
+  <div class="container-fluid text-white">
+    <p> Built By Eric Sei: Product Search {%  now "Y" %} </p>
+    <a target="_blank" href="https://ericsei.github.io/" class="text-white">Click To Connect Me</a>
   </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-  
+ 
   </body>
 </html>
 
