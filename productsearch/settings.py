@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'productsearch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql__psycopg2',
-        'NAME': 'productsearch',
-        'USER':'name',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'productsearchdb',
+        'USER':'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT':''
+        'PORT':'5432'
     }
 }
 
