@@ -1,1 +1,1 @@
-web: gunicorn productsearch.wsgi --log-file -
+web: gunicorn productsearch.wsgi

@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'productsearch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql__psycopg2',
-        'NAME': 'productsearchdb',
-        'USER':'postgres',
+        'NAME': 'productsearch',
+        'USER':'name',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT':''
@@ -133,12 +133,14 @@ USE_TZ = True
 
 
 # save/ join to database file , and give media name
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'productsearch/static/')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+STATICFILES_STORAGE = 'whitenoise'.django.GzipManifestStaticFilesStorage
 
 
