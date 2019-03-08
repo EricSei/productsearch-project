@@ -28,11 +28,14 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
               {% if user.is_authenticated %}
-                  <a class="nav-item nav-link active btn btn-warning" href="{% url 'create' %}">
+                  
+                  <a class="nav-item nav-link active btn btn-white" href="{% url 'create' %}">
                     Create <span class="oi oi-plus"></span> 
                   </a>
-                  <!-- herf run following mini FORM  -->
-                   <a class="nav-item nav-link active text-info" href="javascript:{document.getElementById('logout').submit()}">Log Out </a>
+                  <!-- herf run following mini FORM  -->                 
+                   <a class="nav-item nav-link active text-white" href="javascript:{document.getElementById('logout').submit()}">
+                   Log Out </a>
+                   <h2 class="text-warning">{{user.username}} </h2>
                    <form id="logout" method="POST" action="{% url 'logout' %}">
                      {% csrf_token %}
                      <input type="hidden">
@@ -56,7 +59,7 @@
   </div>
 
 <footer class=" bg-dark text-center">
-  <div class="container-fluid text-white">
+  <div class="footer container-fluid text-white">
     <p> Built By Eric Sei: Product Search {%  now "Y" %} </p>
     <a target="_blank" href="https://ericsei.github.io/" class="text-white">Click To Connect Me</a>
   </div>

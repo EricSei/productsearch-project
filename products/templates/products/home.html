@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+	<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Share with the World ! </h1>
+    <hr>
+    <p class="lead">Share the products that you love. "Sharing is Caring"</p>
+  </div>
+</div>
+
 	{% for product in products.all %}
 	<div class="row pt-3 pb-2">
 		<div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
