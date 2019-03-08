@@ -84,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'productsearchdb',
         'USER':'postgres',
-        'PASSWORD': 'admin',
+        'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT':'5432'
+        'PORT':''
     }
 }
 
