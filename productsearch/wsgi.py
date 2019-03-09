@@ -13,3 +13,5 @@ import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "productsearch.settings")
 
+application = get_wsgi_application()
+
